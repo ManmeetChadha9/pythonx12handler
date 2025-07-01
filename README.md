@@ -9,6 +9,7 @@
 ## STEP 4: Execute the de-identification script to mask the PHI identifiers in the EDI files. This will utilise file 'phi_fields_to_mask.json'
         ./deidentify_phi.sh data/edi_files/<filename>
         ./deidentify_phi.sh data/edi_files/<foldername>
+##NOTE - If required provide required executable permissions  "chmod +x deidentify_phi.sh"
 ## STEP 5: The deidentified edi files can be accessed from the 'data/edi_files/deidentified' directory.
 ## STEP 6: If required, re-identify the de-identified EDI files. The deidentification script utilises the mapping file 'phi_deid_reid_mapping.json'.
         ./reidentify_phi.sh data/edi_files/deidentified/<filename>

@@ -23,7 +23,10 @@ process_single_edi() {
   local name="${base_name%.*}"
 
   # Step 1: EDI to XML
-  xml_file="data/xml_files/${name}.xml"
+  #xml_file="data/xml_files/${name}.xml"
+  xml_dir="data/xml_files"
+  mkdir -p "$xml_dir"
+  xml_file="${xml_dir}/${name}.xml"
   echo "Converting $edi_file to XML file $xml_file"
   #python3.13 -m pyx12.x12xml "$edi_file" --outputfile "$xml_file"
   # For calling x12xml the pyx12 directory path should be added to PATH variable.
