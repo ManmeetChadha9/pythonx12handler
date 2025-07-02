@@ -27,10 +27,10 @@ def convert_file(input_xml, input_root, output_root, mode, rel_folder):
         name = name[:-13]
     elif name.endswith('_reidentified'):
         name = name[:-13]
-    # Output dir: data/edi_files/<mode>/<rel_folder>
+    # Output dir: data/x12_files/<mode>/<rel_folder>
     output_dir = os.path.join(output_root, mode, rel_folder)
     os.makedirs(output_dir, exist_ok=True)
-    output_edi = os.path.join(output_dir, f"{name}.edi")
+    output_edi = os.path.join(output_dir, f"{name}.x12")
     with open(output_edi, 'w', encoding='utf-8') as f_out:
         convert(input_xml, f_out)
     print(f"Conversion complete. Output written to {output_edi}")
@@ -41,7 +41,7 @@ def main():
         sys.exit(1)
 
     input_path = sys.argv[1]
-    output_root = os.path.join('data', 'edi_files')
+    output_root = os.path.join('data', 'x12_files')
 
     if os.path.isfile(input_path):
         # For a single file, determine mode and rel_folder
