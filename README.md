@@ -1,6 +1,6 @@
 # pythonx12handler
 
-########################################################  Explaining how to deidentify and reidentify edi files ########################################################
+############ STEPS to deidentify and reidentify X12 files ####################
 
 ## STEP 1: Identify PHI identifiers to be masked.
 ## STEP 2: Create the masking file 'phi_fields_to_mask.json' and include the required PHI identifiers(Sample here)
@@ -15,7 +15,7 @@
         ./reidentify_phi.sh data/x12_files/deidentified/<foldername>
 ## STEP 7: The reidentified edi files can be accessed from the 'data/x12_files/reidentified' directory.
 
-####################################################  Explaining all other scripts available in this repository ########################################################
+############ Explaining all other scripts available in this repository ######################
 
 ##Covert X12 to XML, using the pyx12 library. If required provide the map path also using --map-path option.
 ##x12xml data/x12_files/837_sample.x12 --outputfile data/xml_files/837_sample.xml --map-path /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pyx12/map
